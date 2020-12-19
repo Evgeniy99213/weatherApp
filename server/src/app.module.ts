@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
-import { ConfigModule } from '@nestjs/config';
-import { TypeOrmModule } from '@nestjs/typeorm';
+import { ConfigModule } from '@nestjs/config'
+import { TypeOrmModule } from '@nestjs/typeorm'
 import { CitiesModule } from './cities/cities.module';
 import { WeatherModule } from './weather/weather.module';
 import { QueriesModule } from './queries/queries.module';
@@ -11,7 +11,7 @@ import { QueriesModule } from './queries/queries.module';
     TypeOrmModule.forRoot(),
     CitiesModule,
     WeatherModule,
-    QueriesModule,
+    QueriesModule
   ],
   controllers: [],
   providers: [],
