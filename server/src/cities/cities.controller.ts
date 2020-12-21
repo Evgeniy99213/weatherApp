@@ -12,6 +12,11 @@ export class CitiesController {
   @Get()
   async handle(@Res() res: Response) {
     const cities: City[] = await this.CitiesService.getCities()
-    res.status(HttpStatus.OK).json(cities)
+    if (!cities.length) {
+      return res.status(HttpStatus.NOT_FOUND).json({
+        message: `Cities are not found!`,
+      })
+    }
+    return res.status(HttpStatus.OK).json(cities)
   }
 }

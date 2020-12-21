@@ -1,3 +1,4 @@
+import { Weather } from '../weather/weather.entity'
 import {
   BaseEntity,
   Column,
@@ -5,7 +6,6 @@ import {
   PrimaryGeneratedColumn,
   OneToMany,
 } from 'typeorm'
-import { Weather } from '../weather/weather.entity'
 
 @Entity()
 export class City extends BaseEntity {
