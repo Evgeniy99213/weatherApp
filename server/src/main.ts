@@ -1,12 +1,16 @@
-import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
-import { parserStart } from './parser.service'
-
-
+import { Logger } from '@nestjs/common'
+import { NestFactory } from '@nestjs/core'
+import { AppModule } from './app.module'
+import { ParserService } from './parser/parser.service'
 
 async function bootstrap() {
+  const logger: Logger = new Logger('main.ts')
   const app = await NestFactory.create(AppModule)
-  await app.listen(3000)
-  await parserStart()
+  await app.get(ParserService).parserStart()
+
+  await app.listen(process.env.SERVER_PORT, () =>
+    logger.log(`Server started on port ${process.env.SERVER_PORT}`),
+  )
 }
-bootstrap();
+
+bootstrap()
