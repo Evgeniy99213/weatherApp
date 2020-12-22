@@ -1,4 +1,4 @@
-import { City } from 'src/cities/cities.entity'
+import { City } from '../../cities/cities.entity'
 
 export interface IWeather {
   maxtemp_c: number
