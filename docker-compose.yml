@@ -4,34 +4,6 @@ volumes:
     database-data:
 
 services:
-
-    # #NestApp container (backend)
-    # server:
-    #     build: chat-server/
-    #     restart: always
-    #     environment:
-    #       - SERVER_PORT=5000
-
-    #       - TYPEORM_CONNECTION=postgres
-    #       - TYPEORM_HOST=postgres
-    #       - TYPEORM_USERNAME=owner
-    #       - TYPEORM_PASSWORD=131313
-    #       - TYPEORM_DATABASE=chat_db
-    #       - TYPEORM_PORT=5432
-    #       - TYPEORM_SYNCHRONIZE=true
-    #       - TYPEORM_LOGGING=false
-    #       - TYPEORM_ENTITIES=./dist/**/*.entity.js
-
-    #       #This is users' ids that will be identified as bots! You should create its manually using Adminer App
-    #       - BOT_ECHO=64ad6160-30c9-4329-9dda-703437d10c2c
-    #       - BOT_REVERSE=661ff672-d7de-4adf-80c7-d8035caa4237
-    #       - BOT_SPAM=986f8970-2d86-482f-bba7-8d17e7ce2836
-    #       - BOT_IGNORE=acf81ce4-c201-4cd1-ac98-bba179e15495
-
-    #     ports:
-    #       - "5000:5000"
-    #       - "4000:4000"
-
     postgres:
         image: postgres:latest
         restart: always
